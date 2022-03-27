@@ -75,7 +75,6 @@ extension FavoritesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = favoritesTableView.dequeueReusableCell(withIdentifier: FavoritesCell.reuseId, for: indexPath) as! FavoritesCell
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesCell.reuseId, for: indexPath) as? FavoritesCell else {
             return UITableViewCell()
         }
@@ -93,7 +92,6 @@ extension FavoritesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            
             DataPersistanceManager.shared.deleteTitleWith(model: favorites[indexPath.row]) { result in
                 switch result {
                 case .success():
