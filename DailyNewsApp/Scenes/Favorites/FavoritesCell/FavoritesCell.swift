@@ -28,7 +28,7 @@ class FavoritesCell: UITableViewCell {
     func set(news: TitleItem){
         favoriteCellLabel.text = news.title
         favoriteCellImage.downloadImage(from: news.urlToImage ?? "image")
-        favoriteCellDateLabel.text = news.publishedAt
+        favoriteCellDateLabel.text = news.publishedAt?.convertToDisplayFormat()
         configure()
     }
     

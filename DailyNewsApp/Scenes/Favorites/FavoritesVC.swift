@@ -41,7 +41,6 @@ class FavoritesVC: UIViewController {
         }
     }
     
-    
     func configureFavoritesTableView(){
         view.addSubview(favoritesTableView)
         favoritesTableView.delegate     = self
@@ -112,7 +111,7 @@ extension FavoritesVC: UITableViewDelegate, UITableViewDataSource {
         let destVC = NewsDetailVC()
         
         destVC.titleLabel.text              = new.title
-        destVC.dateLabel.text               = new.publishedAt
+        destVC.dateLabel.text               = new.publishedAt?.convertToDisplayFormat()
         destVC.descriptionTextView.text     = new.descriptionn
         destVC.configureLearnMoreButton(name: new.urll ?? "")
         destVC.imageView.downloadImage(from: new.urlToImage ?? "")

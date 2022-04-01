@@ -96,7 +96,7 @@ extension NewsViewController: UICollectionViewDelegate {
         let destVC          = NewsDetailVC()
         
         destVC.titleLabel.text          = new.title
-        destVC.dateLabel.text           = new.publishedAt
+        destVC.dateLabel.text           = new.publishedAt?.convertToDisplayFormat()
         destVC.descriptionTextView.text = new.description
         destVC.configureLearnMoreButton(name: new.url ?? "")
         destVC.imageView.downloadImage(from: new.urlToImage ?? "")
