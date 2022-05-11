@@ -7,7 +7,6 @@ Hello! This is my new project.Project has made with UIKit. This project show dal
 - Core Data
 - Safari Web Service
 - Useful memory managment
-- Functional Programing
  
  
 # Gallery
