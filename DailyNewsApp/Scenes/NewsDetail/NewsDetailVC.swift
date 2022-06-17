@@ -16,6 +16,7 @@ class NewsDetailVC: UIViewController {
     var learnMoreButton     = NButton(title: "Learn More", backgroundColor: .systemRed)
     
     var named: String?
+    let padding: CGFloat = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +42,11 @@ class NewsDetailVC: UIViewController {
     func configureImageView(){
         view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        
+    
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 10),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -220),
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: padding),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding*22),
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
         ])
     }
@@ -55,9 +56,9 @@ class NewsDetailVC: UIViewController {
         titleLabel.numberOfLines = 0
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 10),
-            titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: padding),
+            titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: padding),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
         ])
     }
     
@@ -68,9 +69,9 @@ class NewsDetailVC: UIViewController {
         
         NSLayoutConstraint.activate([
             dateLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
-            dateLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
-            dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            dateLabel.heightAnchor.constraint(equalToConstant: 20)
+            dateLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: padding),
+            dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: padding*2)
         ])
     }
     
@@ -79,10 +80,10 @@ class NewsDetailVC: UIViewController {
         descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
         descriptionTextView.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         NSLayoutConstraint.activate([
-            descriptionTextView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
-            descriptionTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            descriptionTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            descriptionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
+            descriptionTextView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: padding),
+            descriptionTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            descriptionTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            descriptionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding*5)
         ])
     }
     
@@ -92,10 +93,10 @@ class NewsDetailVC: UIViewController {
         self.named = name
         
         NSLayoutConstraint.activate([
-            learnMoreButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            view.trailingAnchor.constraint(equalTo: learnMoreButton.trailingAnchor, constant: 30),
-            learnMoreButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -25),
-            learnMoreButton.heightAnchor.constraint(equalToConstant: 50)
+            learnMoreButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding*3),
+            view.trailingAnchor.constraint(equalTo: learnMoreButton.trailingAnchor, constant: padding*3),
+            learnMoreButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding*2.5),
+            learnMoreButton.heightAnchor.constraint(equalToConstant: padding*5)
         ])
     }
     

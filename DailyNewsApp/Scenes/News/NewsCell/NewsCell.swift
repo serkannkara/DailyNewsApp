@@ -17,6 +17,7 @@ class NewsCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
+        newsCellLabel.contentMode = .scaleToFill
     }
     
     required init?(coder: NSCoder) {

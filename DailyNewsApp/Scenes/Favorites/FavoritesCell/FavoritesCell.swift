@@ -22,9 +22,8 @@ class FavoritesCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+    
     func set(news: TitleItem){
         favoriteCellLabel.text = news.title
         favoriteCellImage.downloadImage(from: news.urlToImage ?? "image")
@@ -43,21 +42,23 @@ class FavoritesCell: UITableViewCell {
         favoriteCellDateLabel.textAlignment = .right
         favoriteCellDateLabel.textColor = .systemGray
         
+        let padding: CGFloat = 10
+        
         NSLayoutConstraint.activate([
-            favoriteCellImage.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            favoriteCellImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            favoriteCellImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            favoriteCellImage.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            favoriteCellImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            favoriteCellImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
             favoriteCellImage.widthAnchor.constraint(equalTo: favoriteCellImage.heightAnchor),
             
-            favoriteCellLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            favoriteCellLabel.leadingAnchor.constraint(equalTo: favoriteCellImage.trailingAnchor, constant: 10),
-            favoriteCellLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            favoriteCellLabel.heightAnchor.constraint(equalToConstant: 50),
+            favoriteCellLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            favoriteCellLabel.leadingAnchor.constraint(equalTo: favoriteCellImage.trailingAnchor, constant: padding),
+            favoriteCellLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            favoriteCellLabel.heightAnchor.constraint(equalToConstant: padding*5),
             
-            favoriteCellDateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-            favoriteCellDateLabel.leadingAnchor.constraint(equalTo: favoriteCellImage.leadingAnchor, constant: 10),
-            favoriteCellDateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            favoriteCellDateLabel.heightAnchor.constraint(equalToConstant: 20)
+            favoriteCellDateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
+            favoriteCellDateLabel.leadingAnchor.constraint(equalTo: favoriteCellImage.leadingAnchor, constant: padding),
+            favoriteCellDateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            favoriteCellDateLabel.heightAnchor.constraint(equalToConstant: padding*2)
         ])
         
         

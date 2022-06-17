@@ -75,7 +75,6 @@ class NewsViewController: UIViewController {
         navigationItem.searchController = searchController
     }
     private func downloadTitleAt(indexPath: IndexPath){
-        
         DataPersistanceManager.shared.downloadTitleWith(model: news[indexPath.row]) { result in
             switch result {
             case .success():
@@ -118,7 +117,6 @@ extension NewsViewController: UICollectionViewDelegate {
         
         return config
     }
-    
 }
 
 
